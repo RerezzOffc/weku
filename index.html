@@ -4,7 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff); /* Gradient background */
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #fff;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 12px 30px;
+            border-radius: 30px;
+            background-color: #00d2ff;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul li a:hover {
+            transform: scale(1.1); /* Scale effect on hover */
+            background-color: #ff4b5c; /* Red to pink hover color */
+        }
+
+        /* Main Content Styling */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 160px);
+            text-align: center;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                margin-top: 30px;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 15px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+                padding: 10px 25px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
