@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Layout */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #111;
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ff007f;
+            margin-bottom: 10px;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #ff007f;
+            transform: scale(1.1);
+        }
+
+        /* Main Section */
+        .main-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Product Card */
+        .product-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-card .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            color: #777;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-card .price {
+            font-size: 1.7rem;
+            color: #ff007f;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #d9005f;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Dark Mode Styling */
+        body.dark-mode header {
+            background-color: #222;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header nav a {
+                margin: 0 10px;
+                font-size: 1rem;
+            }
+
+            .main-section {
+                padding: 20px;
+            }
+
+            .product-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .product-card .price {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+
+    <!-- Header -->
+    <header>
+        <h1>Shop Online</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#" id="toggleTheme" style="cursor:pointer;">
+                <i class="fas fa-moon"></i> <!-- Icon untuk mode gelap -->
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content (Product List) -->
+    <div class="main-section">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x250?text=Product+1" alt="Product 1">
+            <div class="content">
+                <h3>Product Name 1</h3>
+                <p>This is a high-quality product that fits your needs perfectly. Don't miss out!</p>
+                <div class="price">$29.99</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x250?text=Product+2" alt="Product 2">
+            <div class="content">
+                <h3>Product Name 2</h3>
+                <p>Explore our latest arrival that provides great value for the price. Order now!</p>
+                <div class="price">$39.99</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x250?text=Product+3" alt="Product 3">
+            <div class="content">
+                <h3>Product Name 3</h3>
+                <p>A product with top-notch performance that will exceed your expectations.</p>
+                <div class="price">$49.99</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x250?text=Product+4" alt="Product 4">
+            <div class="content">
+                <h3>Product Name 4</h3>
+                <p>Upgrade your lifestyle with this amazing product that blends luxury and functionality.</p>
+                <div class="price">$59.99</div>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Shop Online. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the toggle theme button
+        const toggleThemeButton = document.getElementById('toggleTheme');
+        
+        // Check for user's preferred theme from localStorage
+        const userTheme = localStorage.getItem('theme');
+        if (userTheme) {
+            document.body.classList.add(userTheme);
+        }
+        
+        // Add event listener to toggle theme
+        toggleThemeButton.addEventListener('click', function() {
+            const currentTheme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+            const newTheme = currentTheme === 'dark-mode' ? 'light-mode' : 'dark-mode';
+            
+            document.body.classList.remove(currentTheme);
+            document.body.classList.add(newTheme);
+
+            // Save the new theme preference
+            localStorage.setItem('theme', newTheme);
+            
+            // Toggle the icon (moon/sun)
+            if (newTheme === 'dark-mode') {
+                toggleThemeButton.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for light mode
+            } else {
+                toggleThemeButton.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon for dark mode
+            }
+        });
+    </script>
+
+</body>
+</html>
