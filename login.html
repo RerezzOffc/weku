@@ -4,7 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FF7E5F, #FEB47B); /* Vibrant Gradient */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Form Styling */
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Input Styling */
+        label {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 8px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: #f8f8f8;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #FF7E5F;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(255, 126, 95, 0.5);
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #FF7E5F;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FEB47B;
+            transform: translateY(-3px); /* Slight hover lift */
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            form {
+                padding: 25px;
+                width: 90%;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
